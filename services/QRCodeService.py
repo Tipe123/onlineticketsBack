@@ -51,7 +51,7 @@ class QrCodeQenerate():
 
   def __generateQrCode(self,unique_uuid):
     
-    unique_data = f"http://16.170.53.222:8090/get/{unique_uuid}"
+    unique_data = f"http://16.170.53.222:5000/get/{unique_uuid}"
     
     # Generate QR code
     qr = qrcode.QRCode(
