@@ -7,7 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 password = os.getenv('password')
-user = os.getenv('user')
+url = os.getenv('url')
+
 
 Base = declarative_base()
 
@@ -18,7 +19,8 @@ class QrCode(Base):
     read = Column(Boolean,default=False)
     uuid = Column(String(225))
     
-engine = create_engine(f'postgresql://{user}:{password}@localhost:5432/onlineTickets')
+engine = create_engine(f'postgresql://bonolo:{password}@{url}:5432/test_db_b7vz',connect_args={'sslmode': 'require'})
+
 # engine = create_engine(f'postgresql://{user}:{password}@localhost:5432/test_db_b7vz',connect_args={'sslmode': 'require'})
 
 # Base.metadata.drop_all(engine)
